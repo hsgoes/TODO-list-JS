@@ -1,0 +1,41 @@
+.cabecalho {
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: black;
+}
+
+h1 {
+    color: blanchedalmond;
+}
+
+h3 {
+    text-align: center;
+}
+
+.cardTarefa {
+    width: 400px;
+    height: 130px;
+    border: 1px solid;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rodape {
+    background-color: black;
+    position: fixed;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    bottom: 0px;
+    padding: 10px;
+    align-items: center;
+}
+
+#tarefa-digitada {
+    border-radius: 20px;
+    padding: 8px;
+    margin: 2px;
+    width: 45%;
+}
