@@ -13,13 +13,23 @@ let novaTarefa = `<div class="col-md-4">
     </div>
 </div>`
 
-botaoAdicionar.onclick = function () {
 
-    let valorDigitado = inputTarefa.value
 
-    let novaTarefa = `<div class="col-md-4">
+const criarTarefa = (event) => {
+
+    if (event.keyCode == 13 || event.type == "click") {
+        //adiciona o valor que usuário digitou ao campo
+        let valorDigitado = inputTarefa.value;
+        if (valorDigitado == "") {
+            alert("Você deve digitar uma tarefa")
+            return
+        }
+        //limpa o campo
+        inputTarefa.value = "";
+
+        let novaTarefa = `<div class="col-md-4">
     <div class="cardTarefa">
-            <div class="texto-tarefa">
+            <div class="texto-tarefa overflow-auto" style="margin-left: 10px">
                 ${valorDigitado}
             </div>
             <div class="botao-tarefa">
@@ -28,5 +38,21 @@ botaoAdicionar.onclick = function () {
     </div>
     </div>`
 
-    tarefas.innerHTML += novaTarefa;
+        //Insere uma nova tarefa após "beforeend" depois da tag pai das tarefas
+        tarefas.insertAdjacentHTML("beforeend", novaTarefa)
+        
+        let objTarefaNova = tarefas.lastElementChild
+
+        btnCheckTarefaNova = objTarefaNova.lastElementChild.lastElementChild
+
+        btnCheckTarefaNova.onclick = (event)=> {
+            event.target.parentNode.parentNode.parentNode.remove()
+        }
+    }
 }
+
+
+inputTarefa.addEventListener("keypress", criarTarefa)
+botaoAdicionar.addEventListener("click", criarTarefa)
+
+
