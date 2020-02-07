@@ -18,6 +18,7 @@ h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100px;
 }
 
 .rodape {
@@ -34,6 +35,6 @@ h3 {
 #tarefa-digitada {
     border-radius: 20px;
     padding: 8px;
-    margin: 2px;
-    width: 45wv;
+    margin-right: 20px;
+    width: 45%;
 }
